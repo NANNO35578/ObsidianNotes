@@ -1,0 +1,6 @@
+*.doc
+*.docx
+
+
+.obsidian/icons/
+.vscode/
