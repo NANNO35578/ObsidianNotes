@@ -11,11 +11,11 @@
 
 [TestLink-Actully RTC](note_RTC/RTC_README.md)
 
-This Line Test Terminal git status;
-This Line Test Terminal git status;
-This Line Test Terminal git status;
-This Line Test Terminal git status;
-This Line Test Terminal git status;
+> previous fonts:
+> 'Maple Mono','LXGW Wenkai Mono GB','ComicShannsMono Nerd Font','CodeNewRoman Nerd Font','Minecraftia'
+
+> changed into:
+> 'Maple Mono','LXGW WenKai Mono GB','CodeNewRoman Nerd Font Mono','ComicShannsMono Nerd Font Mono','Maple Mono NL,Maple Mono NF'
 
 
 ----
