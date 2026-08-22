@@ -1,0 +1,50 @@
+# --------------------------------------.obsidian
+# 先忽略 .obsidian 下所有内容
+.obsidian/*
+
+# 反向保留你想要同步的配置文件
+!.obsidian/app.json
+!.obsidian/appearance.json
+!.obsidian/hotkeys.json
+!.obsidian/community-plugins.json
+!.obsidian/themes/
+
+# 继续忽略不需要的
+.obsidian/cache
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/backups/
+.obsidian/plugins/
+
+
+.vscode/
+.opencode/
+
+*.doc
+*.docx
+
+# ---------------- 系统生成垃圾文件 ----------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ---------------- Windows 缓存 ----------------
+desktop.ini
+
+# ---------------- VSCode / 编辑器临时文件（如果你在库内编辑） ----------------
+.vscode/
+*.swp
+*.swo
+*~
+
+# ---------------- 导出临时文件（pdf/png等导出产物）----------------
+*.tmp
+
+
+
+
+
