@@ -1,0 +1,182 @@
+/* ============================================================
+   文件：folder-00-colors.css
+   作用：为以 "00-" 开头的文件夹设置自定义颜色（文字 + 背景）
+   兼容：Obsidian v1.4+（同时包含旧版与新版选择器）
+   ============================================================ */
+:root {
+    /* Everforest dark colors */
+    --everforest-bg_dim: #232A2E;
+    --everforest-bg0: #2D353B;
+    --everforest-bg1: #343F44;
+    --everforest-bg2: #3D484D;
+    --everforest-bg3: #475258;
+    --everforest-bg4: #4F585E;
+    --everforest-bg5: #56635f;
+    --everforest-bg_visual: #543A48;
+    --everforest-fg: #D3C6AA;
+    --everforest-red: #E67E80;
+    --everforest-orange: #E69875;
+    --everforest-yellow: #DBBC7F;
+    --everforest-green: #A7C080;
+    --everforest-aqua: #83C092;
+    --everforest-blue: #7FBBB3;
+    --everforest-purple: #D699B6;
+    --everforest-grey0: #7A8478;
+    --everforest-grey1: #859289;
+    --everforest-grey2: #9DA9A0;
+
+    /* Utils */
+    --darken-ratio: 25%;
+}
+
+/* ---------- 第一部分：针对旧版 Obsidian（< v1.6）的选择器 ---------- */
+/* 这些选择器在旧版文件树中生效，为了向后兼容保留 */
+
+.nav-folder-title[data-path^="\'attachments"] .nav-folder-title-content {
+    color: var(--everforest-bg_dim);
+    font-weight: bold;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px;
+    --nav-item-color-hover: var(--everforest-fg);
+    --nav-item-background-hover: var(--everforest-bg_dim);
+    --background-modifier-border-focus: var(--everforest-red);
+    --nav-collapse-icon-color: color-mix(in srgb, var(--everforest-red) 60%, transparent);
+}
+
+/* 选择所有 data-path 属性以 "00-" 开头的文件夹标题（旧版） */
+.nav-folder-title[data-path^="00-"] .nav-folder-title-content {
+    color: var(--everforest-red);
+    font-weight: bold;
+    padding-left: 8px;
+    padding-right: 4px;
+    border-radius: 4px;
+}
+
+.nav-folder-title[data-path^="01-"] .nav-folder-title-content {
+    color: var(--everforest-orange);
+    font-weight: bold;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px;
+}
+
+.nav-folder-title[data-path^="02-"] .nav-folder-title-content {
+    color: var(--everforest-yellow);
+    font-weight: bold;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px;
+}
+
+.nav-folder-title[data-path^="03-"] .nav-folder-title-content {
+    color: var(--everforest-green);
+    font-weight: bold;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px;
+}
+
+.nav-folder-title[data-path^="04-"] .nav-folder-title-content {
+    color: var(--everforest-aqua);
+    font-weight: bold;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px;
+}
+
+.nav-folder-title[data-path^="05-"] .nav-folder-title-content {
+    color: var(--everforest-blue);
+    font-weight: bold;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px;
+}
+
+.nav-folder-title[data-path^="06-"] .nav-folder-title-content {
+    color: var(--everforest-purple);
+    font-weight: bold;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px;
+}
+
+.nav-folder-title[data-path^="07-"] .nav-folder-title-content {
+    color: var(--everforest-red);
+    font-weight: bold;
+    /* background-color: rgb(255, 107, 107); */
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px;
+}
+
+/* 选择所有 data-path 以 "00-" 开头的文件夹项（旧版文件树中的子项） */
+/* .nav-folder-children .nav-file[data-path^="00-"] .nav-file-title,
+.nav-folder-children .nav-folder[data-path^="00-"] .nav-folder-title {
+    color: #ff6b6b;
+} */
+
+/* ---------- 第二部分：针对新版 Obsidian（v1.6+）的选择器 ---------- */
+/* 新版本使用了不同的 DOM 结构和类名，以下选择器覆盖新版界面 */
+
+/* 选择文件树容器中的所有文件夹标题（新版） */
+/* .tree-item-self.is-folder[data-path^="00-"] .tree-item-inner {
+    color: #ff6b6b;
+    font-weight: bold;
+    background-color: rgba(255, 107, 107, 0.10);
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-radius: 4px;
+} */
+
+/* 选择新版文件树中展开/折叠图标前的文件夹图标（可选） */
+/* .tree-item-self.is-folder[data-path^="00-"] .tree-item-icon {
+    color: #ff6b6b;
+    background-color: transparent;
+} */
+
+/* ---------- 第三部分：搜索面板和快速切换器中的匹配项 ---------- */
+/* 当你在全局搜索或快速切换中看到该文件夹时，也应用相同颜色 */
+
+/* 搜索面板中的结果行（如果包含该文件夹路径） */
+.workspace-leaf-content[data-type="search"] .search-result-file-match[data-path^="00-"] .search-result-file-title {
+    color: #ff6b6b;
+}
+
+/* 快速切换器（Ctrl+O）中显示的路径片段 */
+.suggestion-item.is-path[data-path^="00-"] .suggestion-content {
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+/* ---------- 第四部分：可选的额外效果（你可以按需启用） ---------- */
+/* 如果希望文件夹背景颜色延伸到整个行，而不是仅包裹文字，可取消注释下方代码 */
+/*
+.tree-item-self.is-folder[data-path^="00-"] {
+    background-color: rgba(255, 107, 107, 0.08);
+    border-radius: 4px;
+}
+*/
+
+/* ---------- 第五部分：扩展至其他数字前缀（如 01- ~ 09-, 99-） ---------- */
+/* 你只需复制以下模板并更改前缀与颜色即可（注释单独行） */
+
+/*
+  模板示例：
+  [data-path^="01-"] .tree-item-inner {
+      color: #4ecdc4;
+      font-weight: bold;
+      background-color: rgba(78, 205, 196, 0.10);
+      padding-top: 2px;
+      padding-bottom: 2px;
+      padding-left: 6px;
+      padding-right: 6px;
+      border-radius: 4px;
+  }
+*/
+
+/* ============================================================
+   结束
+   ============================================================ */

@@ -1,0 +1,18 @@
+{
+  "cssTheme": "Everforest Spruce",
+  "interfaceFontFamily": "ComicShannsMono Nerd Font Propo,LXGW WenKai GB",
+  "textFontFamily": "Maple Mono NF,LXGW WenKai Mono GB,Maple Mono NF CN,Maple Mono Normal NL",
+  "monospaceFontFamily": "Maple Mono,LXGW WenKai Mono GB,CodeNewRoman Nerd Font,ComicShannsMono Nerd Font Mono",
+  "baseFontSizeAction": true,
+  "showRibbon": true,
+  "showViewHeader": true,
+  "enabledCssSnippets": [
+    "Colored Sidebar Items",
+    "folders",
+    "FileTree",
+    "theme",
+    "plugins"
+  ],
+  "baseFontSize": 15,
+  "accentColor": ""
+}

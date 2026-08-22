@@ -7,7 +7,8 @@
 !.obsidian/appearance.json
 !.obsidian/hotkeys.json
 !.obsidian/community-plugins.json
-!.obsidian/themes/
+!.obsidian/snippets/
+# !.obsidian/themes/
 
 # 继续忽略不需要的
 .obsidian/cache

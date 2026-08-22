@@ -1,0 +1,193 @@
+:root {
+    /* Everforest colors */
+    --everforest-bg_dim: #232A2E;
+    --everforest-bg0: #2D353B;
+    --everforest-bg1: #343F44;
+    --everforest-bg2: #3D484D;
+    --everforest-bg3: #475258;
+    --everforest-bg4: #4F585E;
+    --everforest-bg5: #56635f;
+    --everforest-bg_visual: #543A48;
+    --everforest-fg: #D3C6AA;
+    --everforest-red: #E67E80;
+    --everforest-orange: #E69875;
+    --everforest-yellow: #DBBC7F;
+    --everforest-green: #A7C080;
+    --everforest-aqua: #83C092;
+    --everforest-blue: #7FBBB3;
+    --everforest-purple: #D699B6;
+    --everforest-grey0: #7A8478;
+    --everforest-grey1: #859289;
+    --everforest-grey2: #9DA9A0;
+
+    /* Utils */
+    --darken-ratio: 25%;
+}
+
+.theme-dark {
+    /* ---------------------------------------------------------------------- */
+    /* FOUNDATIONS */
+    /* ---------------------------------------------------------------------- */
+
+    /* Base colors */
+    --color-base-00: var(--everforest-bg_dim);
+    --color-base-05: var(--everforest-bg_dim);
+    --color-base-10: var(--everforest-bg0);
+    --color-base-20: var(--everforest-bg0);
+    --color-base-25: var(--everforest-bg1);
+    --color-base-30: var(--everforest-bg1);
+    --color-base-35: var(--everforest-bg2);
+    --color-base-40: var(--everforest-bg3);
+    --color-base-50: var(--everforest-grey0);
+    --color-base-60: var(--everforest-grey0);
+    --color-base-70: var(--everforest-grey1);
+    --color-base-100: var(--everforest-grey2);
+
+    /* Accent color: green */
+    --accent-h: 83;
+    --accent-s: 34%;
+    --accent-l: 63%;
+
+    /* Extended colors */
+    --color-red: var(--everforest-red);
+    --color-orange: var(--everforest-orange);
+    --color-yellow: var(--everforest-yellow);
+    --color-green: var(--everforest-green);
+    --color-cyan: var(--everforest-blue);
+    --color-blue: var(--everforest-blue);
+    --color-purple: var(--everforest-purple);
+    --color-pink: var(--everforest-purple);
+
+    /* Semantic colors */
+    --background-secondary: var(--everforest-bg_dim);
+    --background-secondary-alt: var(--everforest-bg_dim);
+
+    /* Typography */
+    --text-normal: var(--everforest-fg);
+    --text-muted: var(--everforest-grey2);
+    --text-on-accent: var(--everforest-bg_dim);
+    --text-selection: var(--everforest-bg_visual);
+    --text-highlight-bg: var(--everforest-bg_visual);
+    --italic-color: var(--everforest-yellow);
+    --bold-color: var(--everforest-orange);
+    --bold-modifier: 0;
+
+    /* Icons */
+    --icon-color-focused: var(--icon-color);
+
+    /* ---------------------------------------------------------------------- */
+    /* EDITOR */
+    /* ---------------------------------------------------------------------- */
+
+    /* Blockquote */
+    --blockquote-border-color: var(--everforest-aqua);
+    --blockquote-color: var(--everforest-aqua);
+
+    /* Link */
+    --link-color: var(--everforest-blue);
+    --link-external-color: var(--everforest-blue);
+    --link-color-hover: color-mix(
+        in srgb, var(--link-color), var(--darken-ratio) black
+        );
+    --link-external-color-hover: color-mix(
+        in srgb, var(--link-external-color), var(--darken-ratio) black
+        );
+    --link-unresolved-color: var(--everforest-grey1);
+    --link-unresolved-opacity: 1;
+
+    /* Checkbox */
+    --checkbox-color: var(--everforest-red);
+    --checkbox-color-hover: color-mix(
+        in srgb, var(--checkbox-color), var(--darken-ratio) black
+        );
+
+    /* Code */
+    --code-normal: var(--everforest-fg);
+    --code-comment: var(--everforest-grey1);
+    --code-function: var(--everforest-green);
+    --code-important: var(--everforest-red);
+    --code-keyword: var(--everforest-red);
+    --code-operator: var(--everforest-orange);
+    --code-property: var(--everforest-fg);
+    --code-punctuation: var(--everforest-grey1);
+    --code-string: var(--everforest-green);
+    --code-tag: var(--everforest-aqua);
+    --code-value: var(--everforest-purple);
+
+    /* Simplified table */
+    --table-column-first-border-width: 0px;
+    --table-column-last-border-width: 0px;
+    --table-row-last-border-width: 0px;
+    --table-header-border-width: 0px;
+    --table-header-background: var(--everforest-bg0);
+    --table-header-background-hover: var(--table-header-background);
+
+    /* List */
+    --list-marker-color: var(--everforest-purple);
+
+    /* ---------------------------------------------------------------------- */
+    /* Components */
+    /* ---------------------------------------------------------------------- */
+
+    /* Green text color accents */
+    --nav-item-color-active: var(--everforest-green);
+    --tab-text-color-focused-active-current: var(--everforest-green);
+
+
+    /* status bar */
+    --status-bar-font-size: 18px;
+    --status-bar-border-color: var(--everforest-bg_dim);
+    --status-bar-border-width: 0;
+}
+
+/* 第一步：让状态栏脱离文档流，便于自由定位 */
+body {
+  /* 设置为固定定位，让它相对于视口（浏览器窗口）定位 */
+  --status-bar-position: fixed;
+}
+
+/* 第二步：核心旋转与定位 */
+body .status-bar {
+  /* ---------- 旋转核心 ---------- */
+  /* 顺时针旋转 90 度，让横向变纵向（文字竖排效果） */
+  transform: rotate(-90deg);
+  
+  /* 设置旋转的基点（锚点）为“左侧中心”。
+     这样旋转时，元素的左边缘会固定在锚点，方便对齐标题左侧。 */
+  transform-origin: left center;
+
+  /* ---------- 位置微调（固定到标题左侧） ---------- */
+  /* 取消之前冲突的 bottom/right 值 */
+  bottom: auto;
+  right: auto;
+  
+  /* 距离窗口左边缘 10px（紧贴左侧，给菜单按钮留空间） */
+  left: 15px;
+  /* 距离窗口顶部 50px（向下避开 macOS/Windows 的红绿灯/标题栏按钮） */
+  top: 90%;
+
+  /* ---------- 外观优化 ---------- */
+  /* 使用主题的背景色，并提高透明度，避免遮盖标题 */
+  background: var(--everforest-bg_dim);
+  /* 增加圆角，更柔和 */
+  /* border-radius: var(--radius-s, 4px); */
+  /* 内边距：上下少，左右多（旋转后左右变成上下），让文字不拥挤 */
+  /* padding-top: 6px; */
+  /* padding-bottom: 6px; */
+  /* padding-left: 2px; */
+  /* padding-right: 2px; */
+  /* 文字不换行 */
+  /* white-space: nowrap; */
+  /* 加一点点阴影，让它和标题区分开 */
+  /* box-shadow: var(--shadow-s, 0 2px 4px rgba(0,0,0,0.1)); */
+}
+
+
+blockquote strong {
+    color: var(--blockquote-color);
+    font-weight: 500;
+}
+
+blockquote em {
+    color: var(--blockquote-color);
+}

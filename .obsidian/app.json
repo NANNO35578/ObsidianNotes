@@ -1,0 +1,15 @@
+{
+  "showLineNumber": false,
+  "useTab": false,
+  "vimMode": true,
+  "readableLineLength": false,
+  "showInlineTitle": false,
+  "strictLineBreaks": true,
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./'attachments",
+  "newLinkFormat": "relative",
+  "alwaysUpdateLinks": true,
+  "useMarkdownLinks": true,
+  "showUnsupportedFiles": true,
+  "promptDelete": false
+}

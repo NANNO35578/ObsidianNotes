@@ -10,4 +10,29 @@
 </div>
 
 
+-------------
+# About Obsidian Repository
+## Themes
+I directly copied the CSS of [Everforest Spruce](https://github.com/vupdivup/obsidian-everforest-spruce) theme into the CSS snippets folder, which facilitates my modifications
+
+# Plugins
+- Code styler
+- Git
+- Git history
+- drawio
+- Iconize
+- Advanced Line Number
+
+## CSS snippets
+1. FileTree: Customize file explorer folders
+2. EverforestSpruce: Theme
+3. plugins: Modify plugin's css
+
+-----------
+
+
+
+# Perhaps I can commit This Time
+
+Anyway, I can fallback with `{sh}git reset --soft HEAD~1`.
 
