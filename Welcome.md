@@ -1,0 +1,1051 @@
+<div style="display: flex; align-items: center;">
+    <img src="RelationMap.png" alt="nginx logo" style="width: 500px; margin-left: 10px;">
+	<div style="flex: 1;">
+		<h1><strong style="color:#e67e80">Welcome</strong> to my <em>Repository</em>.</h1>
+		<p>Make a note of <strong style="color:#a7c080">something</strong>, This is <u style="color:#7fbbb3">Introduction</u>;</p>
+		<p><del>Study note in Colin;</del> Code Note</p>
+    </div>
+</div>
+
+[^1] this content will show while ctrl pressed and mouse pointed
+
+[TestLink-Actully RTC](note_RTC/RTC_README.md)
+
+> previous fonts:
+> 'Maple Mono','LXGW Wenkai Mono GB','ComicShannsMono Nerd Font','CodeNewRoman Nerd Font','Minecraftia'
+
+> changed into:
+> 'Maple Mono','LXGW WenKai Mono GB','CodeNewRoman Nerd Font Mono','ComicShannsMono Nerd Font Mono','Maple Mono NL,Maple Mono NF'
+
+
+----
+
+# 不知道叫什么好
+
+|             | Link                  |            Topic             |
+| ----------- | --------------------- | :--------------------------: |
+| Stage One   | [[Stage1]]            |              C               |
+| Stage Two   | [[Stage2]]            |             C++              |
+| Stage Three | [[Stage3]]            | Network & MySQL & IM & Linux |
+| Stage Four  | [[Stage4]]            |            Linux             |
+| Stage Five  | [[Stage5]]            | data structures & algorithms |
+|             |                       |                              |
+| BRUSH       | [[OverviewBrush]]     |  Brush algorithm questions   |
+| interview   | [[OverviewInterview]] |                              |
+| RTC basic   | [[RTC_README]]        |      Created By Cursor       |
+| Diploma     | [[Deploma]]           |                              |
+|             | [[OverviewAndroid]]   |                              |
+|             | [[OverviewReview]]    |                              |
+|             | [[OverviewOtherMD]]   |                              |
+
+# [[Interview Questions]]
+
+
+# 结构体中柔性数组重载运算符`{cpp}new`
+
+```cpp title:"柔性数组重载 new"
+/// 音频数据帧
+///  成员描述
+struct STRU_AUDIO_FRAME {
+  int type;
+  int frameSize;
+  // 为了兼容更广的编译器，可以使用 [1] 而非 []：
+  char audioFrame[];  // ? -> char[];
+
+  /// 1) 带两个参数：baseSize 是 sizeof(STRU_AUDIO_FRAME)，
+  //    frameSize 是用户想要的额外字节数
+  /// @brief #### 使用时: STRU_AUDIO_FRAME *rq= new (size) STRU_AUDIO_FRAME(size);
+  static void *operator new(std::size_t baseSize, std::size_t frameSize) {
+    return ::operator new(baseSize + frameSize);
+  }
+
+  // 2) 匹配的 delete，确保 delete p 正常工作
+  static void operator delete(void *p) noexcept { ::operator delete(p); }
+
+  // 可选：在构造抛出时被调用（C++14 起才需要）
+  static void operator delete(void *p, std::size_t, std::size_t) noexcept {
+    ::operator delete(p);
+  }
+
+  STRU_AUDIO_FRAME(int size) : type(DEF_PACK_AUDIO_FRAME), frameSize(size) {
+    memset(audioFrame, 0, frameSize);
+  }
+
+  void setFrame(const char *frame, std::size_t size) {
+    memcpy(audioFrame, frame, size);
+  }
+
+  int getSize( ) const { return sizeof(STRU_AUDIO_FRAME) + frameSize; }
+};
+```
+
+
+##### Grade Three Experiments
+- [x] 信息存储实验一0913--------1
+- [x] 信息存储实验二0927--------2 n
+- [x] 信息存储实验三1010--------- n
+- [x] 信息存储实验四1025--------
+- [x] 无线传感网实验一二1014-------- r
+- [x] 无线传感网实验三四1021-------- r
+- [x] Unix实验一1009--------
+- [x] Unix实验二1017--------
+- [x] Unix实验三1031--------
+- [x] Unix实验四1114--------
+- [x] 网络设备实验一1016-------- r
+- [x] 网络综合布线实验一1009-------- r
+- [x] 网络综合布线实验二1011-------- n
+- [x] 网络综合布线实验三1018-------- r
+- [x] 网络综合布线实验四1115---------
+- [ ] 网络设备实验二1023-------- 
+- [x] 网络设备实验三1101--------
+- [ ] 网络设备实验四1106--------
+- [ ] 协议开发实验一1022-------- 
+- [ ] 协议开发实验二1108--------
+- [ ] 协议开发实验三1120--------
+- [ ] 协议开发实验四1204  --------
+
+---
+
+# 可以刷题的Online Judge 
+[HRBUST_OJ](http://acm.hrbust.edu.cn/)
+[电子科技大学CDOJ](http://acm.uestc.edu.cn)
+[北京大学PKU](http://acm.pku.edu.cn/JudgeOnline/)
+[浙江大学ZJU](http://acm.zju.edu.cn/)
+[杭州电子科技大学HDU][http://acm.hdu.edu.cn/]
+[哈尔滨工程大学hrbeu](http://acm.hrbeu.edu.cn/)
+[同济大学TJU](http://acm.tongji.edu.cn/)
+[浙江工商Zjgsu](http://acm.zjgsu.edu.cn/JudgeOnline/)
+[宁波理工NIT](http://acm.nit.net.cn)
+[北京化工大学BUCT](http://coder.buct.edu.cn/oj/)
+[中国地质大学CUG](http://lab.cug.edu.cn/COJ/)
+[中国科技大学USTC](http://acm.ustc.edu.cn/)
+[中山大学Zsu](http://acm.zsu.edu.cn/)
+[吉林大学jlu](http://acm.jlu.edu.cn/)
+[浙江林学院ZJFC](http://info.zjfc.edu.cn:2000/)
+[暨南大学Zhuhai]( http://202.116.24.78/JudgeOnline/index.acm)
+[武汉大学whu](http://acm.whu.edu.cn/) 
+[南开大学Naikai]( http://acm.nankai.edu.cn/)
+[大连理工Dlut](http://acm.dlut.edu.cn/)
+[哈尔滨工业大学HIT](http://acm.hit.edu.cn/)
+[北京邮电大学Bupt]( http://acm.cs.bupt.cn/onlinejudge/)
+[湖南大学HNU](http://acm.hnu.cn:8080/online/)
+[香港大学hkoi](http://judge.hkoi.org/)
+[天津大学TJU](http://cs.tju.edu.cn/acm/)
+[四川大学SCU](http://acm.scu.edu.cn/)
+[汕头大学STU](http://acm.stu.edu.cn/)
+[福州大学FZU](http://acm.fzu.edu.cn/)
+[厦门大学XMU](http://acm.xmu.edu.cn/JudgeOnline/)
+[福建师范大学FJNU](http://acm.fjnu.edu.cn/)
+[华中科技大学HUST](http://acm.hust.edu.cn/JudgeOnline/)
+[华东师范大学ECNU](http://acm.cs.ecnu.edu.cn/)
+[浙江工业大学ZJUT](http://acm.zjut.edu.cn/)
+[浙江师范大学ZJNU](http://acm.zjnu.cn/)
+[南京航空航天大学](http://acm.nuaa.edu.cn)
+[西南科技大学swust](http://acm.swust.edu.cn:8080/JudgeOnline/)
+[华东理工大学ecust](http://acm.ecust.edu.cn/)
+[西南科技大学](http://acm.swust.edu.cn/oj/)
+
+
+
+------
+
+# `Markdown` 语法
+
+## 通用语法
+
+### 基本语法
+
+| 代码              | 作用                       |
+| --------------- | ------------------------ |
+| `-`             | 渲染为一个点, 同理还有`*`, `+`     |
+| `1. `           | 渲染为有序列表                  |
+| `- [ ] `        | 将渲染为代办, 写成`- [x]` 将渲染为完成 |
+| `#`             | 渲染为一级标题, 同理`##` 为二级标题    |
+| `**bold**`      | 文本加粗                     |
+| `*Italic*`      | 文本倾斜                     |
+| `~~delete~~`    | 文本删除线                    |
+| `==highlight==` | 文本高亮                     |
+| `---`           | 渲染为分隔线                   |
+| \`\`\`代码块\`\`\` | 渲染代码块                    |
+| \`code\`        | 渲染一行代码                   |
+| `[name](url)`   | 渲染链接                     |
+| `>`             | 自己试试(quote)              |
+| `[^1]`          | 引用                       |
+
+### 用得上的HTML
+
+`{html}<strong style="color:#e67e80">HTML</strong>` 强调, 可配置颜色, 这个例子渲染的HTML字样是这样的: <strong style="color:#e67e80">HTML</strong>
+其他颜色:
+- <strong style="color:a7c080">编辑器</strong>  <strong style="color:e69875">编辑器</strong>  <strong style="color:e67e80">编辑器</strong>  <strong style="color:d0b2dd">编辑器</strong>  <strong style="color:7fbbb3">编辑器</strong>  <strong style="color:dbbc7f">编辑器</strong>  <strong style="color:d3c6aa">编辑器</strong> 
+
+`{html}<u style="color:#e67e80">下划线</u>` HTML的下划线, 这个例子渲染的下划线字样是这样的: <u style="color:#e67e80">下划线</u>. 空格同样渲染: <u style="color:#e67e80"> </u> ,但只渲染一个, 可以这样:  <u style="color:#e67e80"> | | | . . . .</u>
+
+`{html}<em>文本倾斜</em>` HTML的文本倾斜, 这个例子渲染的下划线字样是这样的: <em>文本倾斜</em>
+
+HTML代码块:
+<code class="language-cpp">
+int main() {
+    return 0;
+}
+</code>
+<code>Code</code> 一行代码
+
+
+<h1>HTML Head 1</h1>
+<h6>HTML Head 6</h6>
+<ul>
+	<li> li</li>
+	<li> li</li>
+</ul>
+<ol>
+	<li> li</li>
+	<li> li</li>
+	</ol>
+<p style="color:red;">这是一段红色文字</p>
+<h2 style="color:blue;">蓝色标题</h2>
+<strong style="color:#3c7;">加粗并且带颜色</strong>
+<p style="font-size:1.5em;">使用 em（1.5 倍）</p>
+<p style="font-size:120%;">使用百分比（120%）</p>
+<p style="font-size:1.2rem;">使用 rem（1.2 倍）</p>
+#### 其他HTML语法
+
+用于缩进:
+<dl>
+  <dt>First Term</dt>
+  <dd>This is the definition of the first term.</dd>
+  <dd><div style="display: inline-block; width: 600px; height: 10px; background-color: #D3C6AA;"></div>  </dd>
+  <dt>获取 <strong style="color:#E67E80;">出口公网 IP</strong></dt>
+  <dd><code>curl -s ifconfig.me</code> 或者<code> dig +short myip.opendns.com @resolver1.opendns.com</code> 所以显示的就是通过 ISP 出口看到的地址（可能是 NAT 分配的）</dd>
+  <li>如果你在 <strong style="color:#E67E80;">WSL</strong> 里运行这个tmux插件，获取的 IP 也是 Windows 宿主机的公网出口 IP，不会是 WSL 内部的 <code>192.168.*.*</code> 或 <code>172.*.*</code></li>
+</dl>
+
+左侧嵌入图片:
+<div style="display: flex; align-items: center;">
+    <img src="https://github.com/user-attachments/assets/9335b488-ffcc-4157-8364-2370a0b70ad0" alt="nginx logo" style="width: 200px; margin-left: 10px;">
+	<div style="flex: 1;">
+        <p><strong>Nginx</strong></p>
+        <p>异步框架的<a href="https://zh.wikipedia.org/wiki/%E7%B6%B2%E9%A0%81%E4%BC%BA%E6%9C%8D%E5%99%A8" title="网页服务器">网页服务器</a>，也可以用作<a href="https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86" title="反向代理">反向代理</a>、<a href="https://zh.wikipedia.org/wiki/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1" title="负载均衡">负载平衡器</a>和<a href="https://zh.wikipedia.org/wiki/HTTP%E7%BC%93%E5%AD%98" title="HTTP缓存">HTTP缓存</a>。</p>
+        <p>Nginx使用异步事件驱动的方法来处理请求。Nginx的模块化事件驱动架构<a href="https://zh.wikipedia.org/wiki/Nginx#cite_note-aosabook-15">[15]</a>可以在高负载下提供更可预测的性能<a href="https://zh.wikipedia.org/wiki/Nginx#cite_note-Configuration-16">[16]</a>。</p>
+    </div>
+</div>
+
+
+颜色块:
+<sub>default</sub>  
+<div style="display: inline-block; width: 50px; height: 50px; background-color: #D3C6AA;"></div>  
+<sub>accents</sub>  
+<div style="display: inline-block; width: 50px; height: 50px; background-color: #E67E80;">#E67E80</div><div style="display: inline-block; width: 50px; height: 50px; background-color: #E69875;"></div>  
+<div style="display: inline-block; width: 50px; height: 50px; background-color: #DBBC7F;">DBBC7F</div>  
+<div style="display: inline-block; width: 50px; height: 50px; background-color: #A7C080;"></div>  
+<div style="display: inline-block; width: 50px; height: 50px; background-color: #83C092;"></div>  
+<div style="display: inline-block; width: 50px; height: 50px; background-color: #7FBBB3;"></div>  
+<div style="display: inline-block; width: 50px; height: 50px; background-color: #D699B6;"></div>  
+<sub>greys</sub>  
+<div style="display: inline-block; width: 50px; height: 50px; background-color: #7A8478;"></div>  
+<div style="display: inline-block; width: 50px; height: 50px; background-color: #859289;"></div>  
+<div style="display: inline-block; width: 50px; height: 50px; background-color: #9DA9A0;"></div>  
+<sub>statusline</sub>  
+<div style="display: inline-block; width: 50px; height: 50px; background-color: #A7C080;"></div>  
+<div style="display: inline-block; width: 50px; height: 50px; background-color: #D3C6AA;"></div>  
+<div style="display: inline-block; width: 50px; height: 50px; background-color: #E67E80;"></div>
+
+## obsidian语法
+
+
+> [!note] 
+
+> [!bug] 
+
+> [!abstract] 
+
+> [!info] 
+
+> [!todo] 
+
+> [!tip] 
+
+> [!success] 
+
+> [!question] 
+
+> [!warning] 
+
+> [!quote] 
+
+> [!example] 
+
+> [!error] 
+
+> [!fail] 
+
+> [!code] 
+
+> [!question] Can callouts be nested?
+> nice
+> > [!todo] Yes!, they can.
+> > 哈哈哈
+> > > [!example]  You can even use multiple layers of nesting.
+> > > okkk
+> > 
+> > 2
+> 
+> 1
+
+> [!abstract] 
+>> ```cpp
+>> template <typename T, typename U>
+>> auto add(T t, U u) -> decltype(t + u) {
+>>  return t + u;
+>> }
+>> ```
+> - 好使
+> 1. 分点1
+> 2. 分点2
+
+## obsidian插件语法
+
+只展示示例
+### Code Styler
+
+```cpp title:"Add Title For CodeBlock"
+#include <iostream>
+```
+
+`{cpp}std::cout<<"Render Color For lineCode"<<'\n';`
+### Iconize
+
+:RiNumbersFill: :RiNumber1: :LiCode2: :MiVim: :VsFileTypeEmacs: :MiVscode: :VsFileTypeAccess2: :VsFileTypeOutlook:
+
+### List Callout
+- ! 
+- @ 
+- $ 
+- % 
+- & 
+- ~ 
+- / haha a
+
+### Badges
+
+
+ `[!!note:note]`       `[!!info:haha]`       `[!!abstract:haha]`       `[!!tip:haha]`       `[!!done:haha]`       `[!!help:haha]` 
+ `[!!warning:haha]`       `[!!fail:haha]`       `[!!danger:haha]`       `[!!bug:haha]`       `[!!example:haha]`       `[!!quote:haha]`
+
+ `[!!notice:haha]`       `[!!charge:haha]`       `[!!refine:haha]`       `[!!meta:haha]`       `[!!home:haha]`       `[!!specimen:haha]`
+ `[!!emergency:haha]`       `[!!claim:haha]`       `[!!dig:haha]`       `[!!hold:haha]`       `[!!milestone:haha]`       `[!!image:haha]`  
+
+ `[!!compute:haha]`       `[!!account:haha]`       `[!!command:haha]`       `[!!prohibit:haha]`       `[!!highlight:haha]`       `[!!witness:haha]`      
+ `[!!sprout:haha]`       `[!!component:haha]`       `[!!party:haha]`       `[!!compass:haha]`       `[!!judgment:haha]`       `[!!deed:haha]`   
+   
+ `[!!stop:haha]`       `[!!profile:haha]`       `[!!attachment:haha]`       `[!!extract:haha]`       `[!!polish:haha]`       `[!!crystallize:haha]`
+ `[!!map:haha]`       `[!!balance:haha]`       `[!!honor:haha]`       `[!!bomb:haha]`       `[!!snippet:haha]`       `[!!lightbulb:haha]`   
+   
+ `[!!power:haha]`       `[!!point:haha]`       `[!!expedition:haha]`       `[!!feast:haha]`       `[!!reward:haha]`       `[!!magnet:haha]`       
+ `[!!lock:haha]`       `[!!branch:haha]`       `[!!verse:haha]`       `[!!dream:haha]`       `[!!definition:haha]`       `[!!flag:haha]`    
+   
+ `[!!hat-tip:haha]`       `[!!exclaim:haha]`       `[!!complete:haha]`       `[!!process:haha]`       `[!!mention:haha]`       `[!!knowledge:haha]`
+ `[!!gift:haha]`       `[!!vault:haha]`       `[!!love:haha]`       
+ 
+ `[!!|message-square|comment:haha|var(--color-cyan-rgb)]`       `[!!|dice|roll:haha|120,82,238]`       `[!!|dice|roll:haha|120,82,238]`       `[!!|gem|mineral:haha|var(--my-custom-rgb)]`       `[!!|apple|fruit:haha|var(--color-red-rgb)]`       `[!!|banana|fruit:haha|var(--color-red-rgb)]`
+ `[!!|apple|fruit:haha|var(--color-red-rgb)]`       `[!!|brain|brain:haha|var(--color-purple-rgb)]`       `[!!|sun|weather:haha|var(--color-yellow-rgb)]`       `[!!|cloudy|weather:haha|var(--mono-rgb-100)]`       `[!!|moon|weather:haha|var(--mono-rgb-100)]`       `[!!|sun|weather:haha|var(--mono-rgb-100)]`       
+ `[!!|earth|weather:haha|var(--mono-rgb-100)]`       `[!!|sunset|weather:haha|var(--color-orange-rgb)]`       `[!!|dumbbell|reps:haha|var(--mono-rgb-00)]`       `[!!|gift|event:haha|var(--color-blue-rgb)]`       `[!!|plus-square|credit:haha|var(--color-green-rgb)]`       `[!!|minus-square|debit:haha|var(--color-pink-rgb)]`       
+ `[!!|bug|debit:haha|230,126,128]`       `[!!|computer|debit:haha|127,192,168]`       `[!!|ghb>haha:1.0]`    `[!!|ghs>okay:success]`
+
+
+
+----
+
+# 一些字符
+
+- **不同字体会包含不同字符, 可以在Windows的字符映射表查看"
+
+````text title:"Some Characters"
+
+←───→      ⟵────⟶   ↑ ↓ ↑ ↓
+⇐────⇒     ⬅────➡     ⭠────⭢
+┌────┐     ┌────┐     ┌────┐
+│ A1 │──▶──│ A2 │──▶──│ A3 │
+└─┬──┘     └────┘     └────┘
+  │
+  
+▼                 ⮀ ⮂ ⮁ ⮃ ◢ ◣ ◤ ◥ ▸ ▹                                                
+┌──────────────────┬────┬────┐
+│                  │    │    │
+│                  │    │    │
+├──────────────────┼────┼────┤
+│                  │    │    │
+│                  │    │    │
+└──────────────────┴────┴────┘
+
+````
+
+
+
+
+----
+----
+-----
+----
+----
+----
+----
+----
+----
+---
+
+
+[^1]: this is a what
+	i don't know
+	okay🫠
+	
+
+
+
+----------
+-------------
+
+# Ohhhhh
+
+[[Draft.md]] 
+[[Welcome.md]] 
+[[zzz_TEMP.md]] 
+[[面试稿.md]] 
+[[OverviewStages.md]] 
+[[Stage1.md]] 
+[[Stage2.md]] 
+[[Stage3.md]] 
+[[Stage4.md]] 
+[[Stage5.md]] 
+[[0815.md]] 
+[[0817.md]] 
+[[0818-0819.md]] 
+[[0820.md]] 
+[[0831A.md]] 
+[[0831P.md]] 
+[[0901A.md]] 
+[[0901P.md]] 
+[[0907A.md]] 
+[[0907P.md]] 
+[[0908A.md]] 
+[[0908P.md]] 
+[[0915A-P.md]] 
+[[0720.md]] 
+[[0721.md]] 
+[[0722.md]] 
+[[0724-0725.md]] 
+[[0726.md]] 
+[[0728.md]] 
+[[0729.md]] 
+[[0730.md]] 
+[[0801.md]] 
+[[0802.md]] 
+[[0805.md]] 
+[[0806.md]] 
+[[0807.md]] 
+[[0809.md]] 
+[[0810.md]] 
+[[0811.md]] 
+[[0813.md]] 
+[[0814.md]] 
+[[0921.md]] 
+[[0922.md]] 
+[[0928.md]] 
+[[1013A.md]] 
+[[1013P 类的横向关系.md]] 
+[[1019 继承.md]] 
+[[1020.md]] 
+[[1026.md]] 
+[[1027.md]] 
+[[1102-1103-1109.md]] 
+[[1110.md]] 
+[[1116-1117AM.md]] 
+[[1117PM.md]] 
+[[1123.md]] 
+[[1130.md]] 
+[[1201.md]] 
+[[1202.md]] 
+[[1203.md]] 
+[[1204.md]] 
+[[GameFrame-GPT.md]] 
+[[250113.md]] 
+[[250114.md]] 
+[[250115.md]] 
+[[250117.md]] 
+[[250118.md]] 
+[[250119.md]] 
+[[250120.md]] 
+[[250121.md]] 
+[[250308.md]] 
+[[250309.md]] 
+[[250315.md]] 
+[[250316.md]] 
+[[0330.github_regex.md]] 
+[[0413..md]] 
+[[0419.进程Process.md]] 
+[[0420.并发应用开发(多进程拷贝).md]] 
+[[0426.ICP进程间通信.md]] 
+[[0510.守护进程Deamon.md]] 
+[[0511.pthread线程基础.md]] 
+[[0518.线程安全4线程互斥访问_线程同步.md]] 
+[[0525.信号.md]] 
+[[0606.SOCKET.md]] 
+[[0606.服务器01.md]] 
+[[0607.服务器02.md]] 
+[[0608.服务器03.md]] 
+[[0609.服务器04.md]] 
+[[0611.服务器567.md]] 
+[[生产者消费者.md]] 
+[[0826.md]] 
+[[0828-0829.md]] 
+[[0830.md]] 
+[[0902.md]] 
+[[0906.md]] 
+[[0912.md]] 
+[[0913.md]] 
+[[0918.md]] 
+[[0919.md]] 
+[[0920.md]] 
+[[0923.md]] 
+[[0925.md]] 
+[[0926.md]] 
+[[0927.md]] 
+[[0902 Bubble Sort.md]] 
+[[0904.md]] 
+[[0905.md]] 
+[[0909 Quick Sort.md]] 
+[[0911.md]] 
+[[1010 Bucket Sort.md]] 
+[[1010 Count Sort.md]] 
+[[1010 Radix Sort.md]] 
+[[1011.md]] 
+[[1018 Heap Sort.md]] 
+[[0909 Binary Chop.md]] 
+[[1009.md]] 
+[[1010 Hash More.md]] 
+[[1011 Tree.md]] 
+[[1014.md]] 
+[[1016.md]] 
+[[1017.md]] 
+[[1018 Level Order With 'Enter'.md]] 
+[[1021.md]] 
+[[1023.md]] 
+[[1024 节.md]] 
+[[1025.md]] 
+[[1028.md]] 
+[[1030.md]] 
+[[1031-1101.md]] 
+[[1106.md]] 
+[[1107.md]] 
+[[1108.md]] 
+[[1111.md]] 
+[[1113.md]] 
+[[1114.md]] 
+[[1118-Graph.md]] 
+[[1118-DP.md]] 
+[[0607.项目班01.md]] 
+[[0609.项目班02.md]] 
+[[0719_Qt多线程开发.md]] 
+[[0723_C++11线程_锁.md]] 
+[[0727_C++11条件变量.md]] 
+[[0808_日志实现.md]] 
+[[0812_JSON.md]] 
+[[0820_抓包工具_网络调试.md]] 
+[[OverviewBrush.md]] 
+[[136.single-number.md]] 
+[[190.reverse-bits.md]] 
+[[2643.row-with-maximum-ones.md]] 
+[[461.hamming-distance.md]] 
+[[135.candy.md]] 
+[[2255.count-prefixes-of-a-given-string.md]] 
+[[260.single-number-iii.md]] 
+[[338.counting-bits.md]] 
+[[342.power-of-four.md]] 
+[[693.binary-number-with-alternating-bits.md]] 
+[[435.non-overlapping-intervals.md]] 
+[[88.merge-sorted-array.md]] 
+[[1604.three-or-more-times-in-a-one-hour-period.md]] 
+[[NC160.二分查找-I.md]] 
+[[NC21.链表内指定区间反转.md]] 
+[[NC73.数组中出现次数超过一半的数字.md]] 
+[[NC78.反转链表.md]] 
+[[347.top-k-frequent-elements.md]] 
+[[34.find-first-and-last-position-of-element-in-sorted-array.md]] 
+[[448.ind-all-numbers-disappeared.md]] 
+[[69.sqrtx.md]] 
+[[81.search-in-rotated-sorted-array-ii.md]] 
+[[168.excel-sheet-column-title.md]] 
+[[198.house-robber.md]] 
+[[221.maximal-square.md]] 
+[[413.arithmetic-slices.md]] 
+[[542.01-matrix.md]] 
+[[64.minimum-path-sum.md]] 
+[[NC107.寻找峰值.md]] 
+[[NC13.二叉树最大深度.md]] 
+[[NC193-NC161-NC192.二叉树前中后序遍历.md]] 
+[[NC64.二叉树与双向链表.md]] 
+[[NC65.Fibonacci.md]] 
+[[NC30.缺失的第一个正整数.md]] 
+[[NC75.数组中只出现一次的数字.md]] 
+[[NC76.两个栈实现队列.md]] 
+[[215.kth-largest-element.md]] 
+[[695.max-area-of-island.md]] 
+[[547.number-of-provinces.md]] 
+[[417.pacific-atlantic-water-flow.md]] 
+[[77.combinations.md]] 
+[[79.word-search.md]] 
+[[934.shortest-bridge.md]] 
+[[279.perfect-squares.md]] 
+[[NC89.字符串变形.md]] 
+[[241.different-ways-to-add-parentheses.md]] 
+[[416.partition-equal-subset-sum.md]] 
+[[NC33 .合并两个排序的链表.md]] 
+[[NC4.判断链表中是否有环 NC3. 链表中环的入口结点.md]] 
+[[NC51.合并k个已排序的链表.md]] 
+[[NC69.链表中倒数最后k个结点.md]] 
+[[NC133.链表的奇偶重排.md]] 
+[[NC25.删除有序链表中重复元素1-2.md]] 
+[[NC40.链表相加(二).md]] 
+[[NC66.两个链表的第一个公共结点.md]] 
+[[NC70.单链表的排序.md]] 
+[[NC96.判断一个链表是否为回文结构.md]] 
+[[NC104.比较版本号.md]] 
+[[NC118.数组中的逆序对.md]] 
+[[NC71.旋转数组的最小数字.md]] 
+[[NC119.最小的K个数.md]] 
+[[NC131.数据流中的中位数.md]] 
+[[NC52.有效括号序列.md]] 
+[[NC82.滑动窗口的最大值.md]] 
+[[NC88.寻找第K大.md]] 
+[[NC90.包含min函数的栈.md]] 
+[[27.remove-element.md]] 
+[[28.find-the-index-of-the-first-occ.md]] 
+[[2563.count-the-number-of-fair-pairs.md]] 
+[[781.rabbits-in-forest.md]] 
+[[2521.distinct-prime-factors-of-pro.md]] 
+[[3340.check-balanced-string.md]] 
+[[2145.统计隐藏数组数目.md]] 
+[[907.子数组的最小值之和.md]] 
+[[NC168.盛水最多的容器.md]] 
+[[NC37.合并区间.md]] 
+[[NC41.最长无重复子数组.md]] 
+[[面试题 17.18. 最短超串.md]] 
+[[1373.二叉搜索子树的最大键值和.md]] 
+[[2446.判断两个事件是否存在冲突.md]] 
+[[3000.对角线最长的矩形的面积.md]] 
+[[3069.将元素分配到两个数组中 I.md]] 
+[[1035.不相交的线.md]] 
+[[3392.统计符合条件长度为 3 的子数组数目.md]] 
+[[1894.找到需要补充粉笔的学生编号.md]] 
+[[2302.统计得分小于 K 的子数组数目.md]] 
+[[384. 打乱数组.md]] 
+[[1295.统计位数为偶数的数字.md]] 
+[[1745.分割回文串 IV.md]] 
+[[1561.你可以获得的最大硬币数目.md]] 
+[[3110.字符串的分数.md]] 
+[[1007.行相等的最少多米诺旋转.md]] 
+[[3305.元音辅音字符串计数 I.md]] 
+[[1552.两球之间的磁力.md]] 
+[[3083.字符串及其反转中是否存在同一子字符串.md]] 
+[[1128.等价多米诺骨牌对的数量.md]] 
+[[1963.使字符串平衡的最小交换次数.md]] 
+[[3046.分割数组.md]] 
+[[2101.引爆最多的炸弹.md]] 
+[[3341.到达最后一个房间的最少时间 I.md]] 
+[[3342.到达最后一个房间的最少时间 II.md]] 
+[[2364.统计坏数对的数目.md]] 
+[[2614.对角线上的质数.md]] 
+[[3270.求出数字答案.md]] 
+[[0509小组会议.md]] 
+[[2918.数组的最小相等和.md]] 
+[[0510小组会议.md]] 
+[[1366.通过投票对团队排名.md]] 
+[[1550.存在连续三个奇数的数组.md]] 
+[[0511小组会议.md]] 
+[[2962.统计最大元素出现至少 K 次的子数组.md]] 
+[[598.区间加法 II.md]] 
+[[0512小组会议.md]] 
+[[3335.字符串转换后的长度 I.md]] 
+[[0513小组会议.md]] 
+[[2610.转换二维数组.md]] 
+[[0514小组会议.md]] 
+[[3291.形成目标字符串需要的最少字符串数 I.md]] 
+[[2901.最长相邻不相等子序列 II.md]] 
+[[75.颜色排序.md]] 
+[[0517小组会议.md]] 
+[[400.第 N 位数字.md]] 
+[[3066.超过阈值的最少操作数 II.md]] 
+[[729.我的日程安排表 I.md]] 
+[[0520小组会议.md]] 
+[[3355.零数组变换 I.md]] 
+[[0521小组会议.md]] 
+[[3356.零数组变换 II.md]] 
+[[3362.零数组变换 III.md]] 
+[[0523小组会议.md]] 
+[[2680.最大或值.md]] 
+[[0524小组会议.md]] 
+[[40.组合总和 II.md]] 
+[[45.跳跃游戏 II.md]] 
+[[0526小组会议.md]] 
+[[385. 找出所有子集的异或总和再求和.md]] 
+[[0527Meeting.md]] 
+[[0527小组会议.md]] 
+[[2716.最小化字符串长度.md]] 
+[[59.螺旋矩阵 II.md]] 
+[[0528提问.md]] 
+[[2239.找到最接近0的数字.md]] 
+[[2597.美丽子集的数目.md]] 
+[[0529Meeting.md]] 
+[[2359.找到离给定两个节点最近的节点.md]] 
+[[1920.基于排列构建数组.md]] 
+[[LCR.110.所有可能的路径.md]] 
+[[2.两数相加.md]] 
+[[68.文本左右对齐.md]] 
+[[0601小组会议.md]] 
+[[1742.盒子中小球的最大数量.md]] 
+[[3095.或值至少K的最短子数组I.md]] 
+[[0602Meeting.md]] 
+[[0602小组会议.md]] 
+[[2094.找出3位偶数.md]] 
+[[0604小组会议.md]] 
+[[2270.分割数组的方案数.md]] 
+[[3097.或值至少为K的最短子数组II.md]] 
+[[1061.按字典序排列最小的等效字符串.md]] 
+[[2434.使用机器人打印字典序最小的字符串.md]] 
+[[49.字母异位词分组.md]] 
+[[128.最长连续序列.md]] 
+[[11.盛最多水的容器.md]] 
+[[15.三数之和.md]] 
+[[283.移动零.md]] 
+[[3.无重复字符的最长子串.md]] 
+[[42.接雨水.md]] 
+[[234.回文链表.md]] 
+[[240.搜索二维矩阵 II.md]] 
+[[54.螺旋矩阵.md]] 
+[[73.矩阵置零.md]] 
+[[438.找到字符串中所有字母异位词.md]] 
+[[560.和为K的子数组.md]] 
+[[53.最大子数组和.md]] 
+[[56.合并区间.md]] 
+[[1432.改变一个整数能得到的最大差值.md]] 
+[[238.除自身以外数组的乘积.md]] 
+[[141.环形链表.md]] 
+[[19.删除链表的倒数第N个结点.md]] 
+[[21.合并两个有序链表.md]] 
+[[48.旋转图像.md]] 
+[[35.搜索插入位置.md]] 
+[[153.寻找旋转排序数组中的最小值.md]] 
+[[33.搜索旋转排序数组.md]] 
+[[74.搜索二维矩阵.md]] 
+[[104.二叉树的最大深度.md]] 
+[[101.对称二叉树.md]] 
+[[226.翻转二叉树.md]] 
+[[394.字符串解码.md]] 
+[[118.杨辉三角.md]] 
+[[322.零钱兑换.md]] 
+[[25.K个一组翻转链表.md]] 
+[[108.将有序数组转换为二叉搜索树.md]] 
+[[199.二叉树的右视图.md]] 
+[[230.二叉搜索树中第K小的元素.md]] 
+[[98.验证二叉搜索树.md]] 
+[[739.每日温度.md]] 
+[[121.买卖股票的最佳时机.md]] 
+[[55.跳跃游戏.md]] 
+[[169.多数元素.md]] 
+[[152.乘积最大子数组.md]] 
+[[300.最长递增子序列.md]] 
+[[62.不同路径.md]] 
+[[114.二叉树展开为链表.md]] 
+[[236.二叉树的最近公共祖先.md]] 
+[[207.课程表.md]] 
+[[31.下一个排列.md]] 
+[[39.组合总和.md]] 
+[[200.岛屿数量.md]] 
+[[17.电话号码的字母组合.md]] 
+[[3442.奇偶频次间的最大差值I.md]] 
+[[994.腐烂的橘子.md]] 
+[[146.LRU缓存.md]] 
+[[208.实现Trie(前缀树).md]] 
+[[3169.无需开会的工作日.md]] 
+[[7.整数反转.md]] 
+[[2410.运动员和训练师的最大匹配数.md]] 
+[[1290.二进制链表转整数.md]] 
+[[78.子集.md]] 
+[[1114.按序打印.md]] 
+[[1115.交替打印FooBar.md]] 
+[[1233.删除子文件夹.md]] 
+[[1206.设计跳表.md]] 
+[[2502.设计内存分配器.md]] 
+[[2506.统计相似字符串对的数目.md]] 
+[[2296.设计一个文本编辑器.md]] 
+[[1717.删除子字符串的最大得分.md]] 
+[[1328.破坏回文串.md]] 
+[[1472.设计浏览器历史记录.md]] 
+[[1931.用三种不同颜色为网格涂色.md]] 
+[[2071.你可以安排的最多任务数目.md]] 
+[[1298.你能从盒子里获得的最大糖果数.md]] 
+[[2411.按位或最大的最小子数组长度.md]] 
+[[2588.统计美丽子数组数目.md]] 
+[[139.单词拆分.md]] 
+[[2294.划分数组使最大差为K.md]] 
+[[904.水果成篮.md]] 
+[[1027.最长等差数列.md]] 
+[[148.排序链表.md]] 
+[[1498.满足条件的子序列数目.md]] 
+[[189.轮转数组.md]] 
+[[2929.给小朋友们分糖果II.md]] 
+[[437.路径总和III.md]] 
+[[r136.md]] 
+[[r190.md]] 
+[[r2270..md]] 
+[[r2410..md]] 
+[[r25.K个一组翻转链表.md]] 
+[[r3083..md]] 
+[[r347.前K个高频元素.md]] 
+[[r42.接雨水.md]] 
+[[r435.无重复区间.md]] 
+[[r729..md]] 
+[[class es.md]] 
+[[NetDiskNote.md]] 
+[[VideoMeeting.md]] 
+[[AndroidStudio的APP访问WSL服务器.md]] 
+[[ChatGPT.md]] 
+[[Emacs.md]] 
+[[EverforestColourSchema.md]] 
+[[exit_And_atexit.md]] 
+[[GDB调试.md]] 
+[[git.md]] 
+[[https.md]] 
+[[mmap.md]] 
+[[MSYS2.md]] 
+[[Neovim_NvChad_Workflow.md]] 
+[[New Linux System Settings.md]] 
+[[nvim代码补全.md]] 
+[[OpenClaw.md]] 
+[[OverviewOtherMD.md]] 
+[[QML基础与实践.md]] 
+[[QT模块_OPUS音频采集编码解码播放.md]] 
+[[QT模块_SHA256加密.md]] 
+[[std_vector_bool.md]] 
+[[Valgrind-And-fsanitize.md]] 
+[[Windows下编译FFmpeg.md]] 
+[[workbench连接到WSL中的MySQL数据库.md]] 
+[[WSL 安装 MySql.md]] 
+[[wsl安装ffmpeg&nginx.md]] 
+[[WSL最大文件描述符.md]] 
+[[云服务器部署.md]] 
+[[因为不好看导致的bug.md]] 
+[[池化技术.md]] 
+[[0307Shopee笔试.md]] 
+[[0314Shoope一面.md]] 
+[[0318Shopee二面.md]] 
+[[OverviewInterview.md]] 
+[[0117_大家保险.md]] 
+[[0909_杰锋汽车.md]] 
+[[0915_去哪儿_ai.md]] 
+[[0918_信锐.md]] 
+[[0919_海能达.md]] 
+[[0920_掌阅科技.md]] 
+[[0922_分叉智能.md]] 
+[[0922_得物一面.md]] 
+[[0923_一芯科技.md]] 
+[[0924_诺瓦星云.md]] 
+[[0930_掌阅科技.md]] 
+[[0930_诺瓦星云.md]] 
+[[1011_掌阅科技.md]] 
+[[1030_迈普通信.md]] 
+[[1106_迈普通信.md]] 
+[[1110_百度.md]] 
+[[1114_传音控股.md]] 
+[[1119_传音控股.md]] 
+[[1119_百度.md]] 
+[[1204_小迈科技.md]] 
+[[1208_声网.md]] 
+[[1212_声网.md]] 
+[[1218_知乎.md]] 
+[[1218_鼎桥.md]] 
+[[1225_鼎桥.md]] 
+[[0802模拟面试.md]] 
+[[0805模拟面试.md]] 
+[[0807模拟面试.md]] 
+[[0809模拟面试_.md]] 
+[[0812模拟面试.md]] 
+[[0814.md]] 
+[[0815模拟面试.md]] 
+[[0816模拟面试.md]] 
+[[0818.md]] 
+[[0819.md]] 
+[[0821模拟面试.md]] 
+[[0825.md]] 
+[[0826.md]] 
+[[0827.md]] 
+[[0828.md]] 
+[[0829T.md]] 
+[[Interview Questions.md]] 
+[[interviewTemp.md]] 
+[[trashQuestion.md]] 
+[[0510Meeting.md]] 
+[[0513Meeting.md]] 
+[[0515Meeting.md]] 
+[[0518Meeting.md]] 
+[[0522Meeting.md]] 
+[[0717模拟面试.md]] 
+[[0718模拟面试.md]] 
+[[0721模拟面试.md]] 
+[[0722模拟面试.md]] 
+[[0723模拟面试.md]] 
+[[0724模拟面试.md]] 
+[[0725模拟面试.md]] 
+[[0728模拟面试.md]] 
+[[0729模拟面试.md]] 
+[[7.22.md]] 
+[[7.22内核空间和用户空间.md]] 
+[[7.23.md]] 
+[[7.24.md]] 
+[[00-C_PBL.md]] 
+[[01-C.md]] 
+[[02-C++.md]] 
+[[03-Network.md]] 
+[[04-Database.md]] 
+[[05-OperatingSystem.md]] 
+[[Cppreference.md]] 
+[[HTTP&HTTPS.md]] 
+[[OverviewReview.md]] 
+[[SQL注入.md]] 
+[[一致性哈希.md]] 
+[[关系型数据库.md]] 
+[[数据库事务.md]] 
+[[数据库索引.md]] 
+[[数据库锁.md]] 
+[[数据库集群.md]] 
+[[非关系型数据库.md]] 
+[[AndroidGame.md]] 
+[[AndroidStudio.md]] 
+[[BT_DAY0.md]] 
+[[Notes.md]] 
+[[OverviewAndroid.md]] 
+[[TCamp_day_calender.md]] 
+[[Tcamp_day_calender_TEMP.md]] 
+[[Deploma.md]] 
+[[0513_论文_参考文献.md]] 
+[[0513_论文_新增页面展示.md]] 
+[[0514_王莉莉.md]] 
+[[0514_王莉莉_简洁.md]] 
+[[0515_deepseek_Chapter3.md]] 
+[[0515_kimi_增加页面.md]] 
+[[0516_降AI.md]] 
+[[流程图.md]] 
+[[论文_GPT框架.md]] 
+[[论文_markdown.md]] 
+[[论文_纯markdown.md]] 
+[[260417_数据库操作.md]] 
+[[API设计&实现.md]] 
+[[DraftNote.md]] 
+[[DsService开发.md]] 
+[[DS获取标签bug.md]] 
+[[ES客户端重构.md]] 
+[[note_260410.md]] 
+[[note_260411.md]] 
+[[note_260412.md]] 
+[[note_260413_api.md]] 
+[[note_260413_file.md]] 
+[[note_260413_ocr.md]] 
+[[note_260414_gpt4o.md]] 
+[[note_260414_kimi.md]] 
+[[note_260415.md]] 
+[[note_260415_bugfix.md]] 
+[[note_260415_edit.md]] 
+[[note_260416_design.md]] 
+[[note_260417.md]] 
+[[note_260417_edit.md]] 
+[[note_260417_work.md]] 
+[[note_260420_API.md]] 
+[[note_260421_Android.md]] 
+[[note_260421_theme.md]] 
+[[note_260421_前端.md]] 
+[[note_260421_前端Pinia.md]] 
+[[note_260422.md]] 
+[[Open修改文件树可上下滑动.md]] 
+[[修改已有API.md]] 
+[[公开笔记预览页面.md]] 
+[[前端agent.md]] 
+[[多了个符号而已.md]] 
+[[推荐页面设计.md]] 
+[[搜索API重构.md]] 
+[[整理API.md]] 
+[[测试编译修复.md]] 
+[[论文 1.md]] 
+[[论文_降AIGC.md]] 
+[[重构搜索框.md]] 
+[[note_0_schema.md]] 
+[[note_251202.md]] 
+[[note_251217.md]] 
+[[note_260112.md]] 
+[[note_260125.md]] 
+[[note_260201.md]] 
+[[note_260203.md]] 
+[[note_260308.md]] 
+[[note_260315.md]] 
+[[note_260326.md]] 
+[[note_260329.md]] 
+[[note_260401_ChatGPT.md]] 
+[[note_260405.md]] 
+[[note_260407_0_选型&安装.md]] 
+[[note_260407_1_后端开发.md]] 
+[[note_260408.md]] 
+[[note_origin.md]] 
+[[开题答辩.md]] 
+[[每周小结.md]] 
+[[前端用户基本模块实现.md]] 
+[[后端基本用户模块API.md]] 
+[[周志.md]] 
+[[周志_2.md]] 
+[[周志_puretext.md]] 
+[[week_01.md]] 
+[[week_02.md]] 
+[[week_03.md]] 
+[[week_04.md]] 
+[[week_05.md]] 
+[[week_06.md]] 
+[[week_07.md]] 
+[[week_08.md]] 
+[[week_09.md]] 
+[[week_10.md]] 
+[[week_11.md]] 
+[[week_12.md]] 
+[[week_13.md]] 
+[[week_14.md]] 
+[[week_15.md]] 
+[[week_16.md]] 
+[[week_17.md]] 
+[[week_18.md]] 
+[[week_19.md]] 
+[[week_20.md]] 
+[[week_21.md]] 
+[[week_22.md]] 
+[[IOCP.md]] 
+[[IOCP还得加线程池处理.md]] 
+[[LF_ThreadPool.md]] 
+[[VoiceChat.md]] 
+[[VolCall.md]] 
+[[01-RTC基础概念.md]] 
+[[02-音视频基础.md]] 
+[[03-网络传输协议.md]] 
+[[04-编解码技术.md]] 
+[[05-实时通信架构.md]] 
+[[06-WebRTC详解.md]] 
+[[07-音视频处理.md]] 
+[[08-性能优化.md]] 
+[[09-常见问题与解决方案.md]] 
+[[10-实践项目.md]] 
+[[cursorReport.md]] 
+[[RTC_README.md]] 
+[[OnlyHLS.md]] 
+[[video.md]] 
+[[ModernOpenGLWidget.md]] 
+[[opengl.md]] 
+[[SR_.md]] 
+[[0816]] 
+[[0824]] 
+[[1863. 找出所有子集的异或总和再求和]] 
+
+
