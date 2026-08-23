@@ -472,7 +472,7 @@ sudo nginx -s reload
 
 ##### 视频预览流程
 
-![[视频预览.png]]
+![视频预览.png](./'attachments/视频预览.png)
 
 
 ---

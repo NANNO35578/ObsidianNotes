@@ -32,7 +32,7 @@ CREATE TABLE t_user (
 ----
 
 
-![[MeetingAudio.png]]
+![MeetingAudio.png](./'attachments/MeetingAudio.png) 
 
 
 为什么选CS而不是BS
