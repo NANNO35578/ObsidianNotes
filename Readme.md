@@ -10,12 +10,15 @@
 </div>
 
 
+- Test Paste Link
+![ThisWasPreviousMap|747]('attachments/PreviousMap.png)
+
 -------------
 # About Obsidian Repository
 ## Themes
 I directly copied the CSS of [Everforest Spruce](https://github.com/vupdivup/obsidian-everforest-spruce) theme into the CSS snippets folder, which facilitates my modifications
 
-# Plugins
+## Plugins
 - Code styler
 - Git
 - Git history
@@ -28,11 +31,15 @@ I directly copied the CSS of [Everforest Spruce](https://github.com/vupdivup/obs
 2. EverforestSpruce: Theme
 3. plugins: Modify plugin's css
 
------------
 
+---- 
 
+# CSS Test
+# head 1
+## head 2
+### head 3
+#### head 4
+##### head 5
+###### head 6
 
-# Perhaps I can commit This Time
-
-Anyway, I can fallback with `{sh}git reset --soft HEAD~1`.
-
+*italic*  <em>em</em>  **bold** <strong>strong</strong> `md code` <code>code</code> ~~md delete~~ <del>delete</del> 

@@ -11,5 +11,6 @@
   "alwaysUpdateLinks": true,
   "useMarkdownLinks": true,
   "showUnsupportedFiles": true,
-  "promptDelete": false
+  "promptDelete": false,
+  "settingsPopoutWindow": false
 }

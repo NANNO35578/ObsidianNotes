@@ -1,0 +1,111 @@
+/*
+ * Obsidian Folder Color Coding
+ * 
+ * This snippet provides custom colors for folders in the file explorer based on their prefix.
+ * Each folder prefix (00, 10, 20, etc.) gets a unique color scheme including the folder title,
+ * indentation guides, and collapse icons.
+ * 
+ * Usage:
+ * 1. Change the data-path prefix to match your folder structure
+ * 2. Place this file in .obsidian/snippets/
+ * 3. Enable it in Settings > Appearance > CSS snippets
+ */
+
+.nav-folder .collapse-icon svg {
+  display: none;
+}
+.nav-folder .collapse-icon::before  {
+  content: "";
+  font-size: 12px;
+  color: #4F585E;
+}
+/* .nav-folder > .nav-folder-title {
+    padding-left: -20px; 
+} */
+
+/* =============================================================================
+   FOLDER COLOR SCHEMES BY PREFIX
+   ============================================================================= */
+
+/* .nav-folder:has(.nav-folder-title[data-path^="00"]:not([data-path*="/"])) {
+  --nav-indentation-guide-color: #a4b9c5;
+  --nav-collapse-icon-color: #a4b9c5;
+}
+.nav-folder:has(.nav-folder-title[data-path^="\'attachments"]:not([data-path*="/"]))>.nav-folder-title {
+  color: #232A2E !important;
+  --nav-collapse-icon-color: #232a2e !important;
+} */
+
+.nav-folder:has(.nav-folder-title[data-path^="00"]:not([data-path*="/"])) {
+  --nav-indentation-guide-color: #a4b9c5;
+  --nav-collapse-icon-color: #a4b9c5;
+}
+.nav-folder:has(.nav-folder-title[data-path^="00"]:not([data-path*="/"])) > .nav-folder-title {
+  color: #a4b9c5;
+}
+
+.nav-folder:has(.nav-folder-title[data-path^="01"]:not([data-path*="/"])) {
+  --nav-indentation-guide-color: #9ea7d6;
+  --nav-collapse-icon-color: #9ea7d6;
+}
+.nav-folder:has(.nav-folder-title[data-path^="01"]:not([data-path*="/"])) > .nav-folder-title {
+  color: #9ea7d6;
+}
+
+.nav-folder:has(.nav-folder-title[data-path^="02"]:not([data-path*="/"])) {
+  --nav-indentation-guide-color: #75b4b4;
+  --nav-collapse-icon-color: #75b4b4;
+}
+.nav-folder:has(.nav-folder-title[data-path^="02"]:not([data-path*="/"])) > .nav-folder-title {
+  color: #75b4b4;
+}
+
+.nav-folder:has(.nav-folder-title[data-path^="03"]:not([data-path*="/"])) {
+  --nav-indentation-guide-color: #7cac8b;
+  --nav-collapse-icon-color: #7cac8b;
+}
+.nav-folder:has(.nav-folder-title[data-path^="03"]:not([data-path*="/"])) > .nav-folder-title {
+  color: #7cac8b;
+}
+
+.nav-folder:has(.nav-folder-title[data-path^="04"]:not([data-path*="/"])) {
+  --nav-indentation-guide-color: #b6ca95;
+  --nav-collapse-icon-color: #b6ca95;
+}
+.nav-folder:has(.nav-folder-title[data-path^="04"]:not([data-path*="/"])) > .nav-folder-title {
+  color: #b6ca95;
+}
+
+.nav-folder:has(.nav-folder-title[data-path^="05"]:not([data-path*="/"])) {
+  --nav-indentation-guide-color: #d0b2dd;
+  --nav-collapse-icon-color: #d0b2dd;
+}
+.nav-folder:has(.nav-folder-title[data-path^="05"]:not([data-path*="/"])) > .nav-folder-title {
+  color: #d0b2dd;
+}
+
+.nav-folder:has(.nav-folder-title[data-path^="06"]:not([data-path*="/"])) {
+  --nav-indentation-guide-color: #e2b9ce;
+  --nav-collapse-icon-color: #e2b9ce;
+}
+.nav-folder:has(.nav-folder-title[data-path^="06"]:not([data-path*="/"])) > .nav-folder-title {
+  color: #e2b9ce;
+}
+
+
+/* =============================================================================
+   HOVER EFFECTS
+   ============================================================================= */
+
+/* Hover effect for folder and file titles */
+.nav-folder-title:hover,
+.nav-file-title:hover {
+  color: #e67e80 !important;
+  --nav-collapse-icon-color: #e67e80 !important;
+}
+
+/* Nested hover effect for folder titles within folders */
+.nav-folder-title:hover .nav-folder-title,
+.nav-file-title:hover .nav-file-title {
+  color: #e67e80 !important;
+}

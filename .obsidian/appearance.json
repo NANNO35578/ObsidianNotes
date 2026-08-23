@@ -8,10 +8,11 @@
   "showViewHeader": true,
   "enabledCssSnippets": [
     "Colored Sidebar Items",
-    "folders",
-    "FileTree",
     "theme",
-    "plugins"
+    "plugins",
+    "everforest_theme",
+    "everforest_headling",
+    "everforest_folder"
   ],
   "baseFontSize": 15,
   "accentColor": ""

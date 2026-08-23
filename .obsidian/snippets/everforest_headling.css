@@ -1,0 +1,113 @@
+/*
+ * Obsidian Headings Color Scheme
+ * 
+ * This snippet provides custom colors for markdown headings in both preview and source view.
+ * Colors are designed for Everforest dark theme. Placeholders for light theme tweaks are included, but not configured since I never use it.
+ * 
+ * Usage: Place this file in .obsidian/snippets/ and enable it in Settings > Appearance > CSS snippets
+ */
+
+/* =============================================================================
+   DARK THEME HEADING COLORS
+   ============================================================================= */
+
+/* Setting inline title color to match H1 color */
+body {
+    --inline-title-color: #a4b9c5 !important;
+}
+
+/* H1 - Light blue-gray */
+.markdown-preview-view h1,
+.markdown-source-view .cm-header-1 {
+    color: #a4b9c5 !important;
+}
+
+/* H2 - Teal */
+.markdown-preview-view h2,
+.markdown-source-view .cm-header-2 {
+    color: #75b4b4 !important;
+}
+
+/* H3 - Light purple with transparency */
+.markdown-preview-view h3,
+.markdown-source-view .cm-header-3 {
+    color: #d0b2ddd0 !important;
+}
+
+/* H4 - Sage green */
+.markdown-preview-view h4,
+.markdown-source-view .cm-header-4 {
+    color: #70a07f !important;
+}
+
+/* H5 - Light green with transparency */
+.markdown-preview-view h5,
+.markdown-source-view .cm-header-5 {
+    color: #b6ca95e1 !important;
+}
+
+/* H6 - Lavender blue */
+.markdown-preview-view h6,
+.markdown-source-view .cm-header-6 {
+    color: #9ea7d6 !important;
+}
+
+/* =============================================================================
+   HOVER EFFECTS FOR ALL HEADINGS
+   ============================================================================= */
+
+.markdown-preview-view h1:hover,
+.markdown-preview-view h2:hover,
+.markdown-preview-view h3:hover,
+.markdown-preview-view h4:hover,
+.markdown-preview-view h5:hover,
+.markdown-preview-view h6:hover,
+.markdown-source-view .cm-header-1:hover,
+.markdown-source-view .cm-header-2:hover,
+.markdown-source-view .cm-header-3:hover,
+.markdown-source-view .cm-header-4:hover,
+.markdown-source-view .cm-header-5:hover,
+.markdown-source-view .cm-header-6:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+/* =============================================================================
+   LIGHT THEME HEADING COLORS (NOT CONFIGURED)
+   ============================================================================= */
+
+/* H1 - Dark purple-brown */
+.theme-light .markdown-preview-view h1,
+.theme-light .markdown-source-view .cm-header-1 {
+    color: #4c3743 !important;
+}
+
+/* H2 - Dark green */
+.theme-light .markdown-preview-view h2,
+.theme-light .markdown-source-view .cm-header-2 {
+    color: #5a7c65 !important;
+}
+
+/* H3 - Dark teal */
+.theme-light .markdown-preview-view h3,
+.theme-light .markdown-source-view .cm-header-3 {
+    color: #627b7b !important;
+}
+
+/* H4 - Dark blue-gray */
+.theme-light .markdown-preview-view h4,
+.theme-light .markdown-source-view .cm-header-4 {
+    color: #6b7c93 !important;
+}
+
+/* H5 - Dark gray-green */
+.theme-light .markdown-preview-view h5,
+.theme-light .markdown-source-view .cm-header-5 {
+    color: #7f897d !important;
+}
+
+/* H6 - Dark gray-blue */
+.theme-light .markdown-preview-view h6,
+.theme-light .markdown-source-view .cm-header-6 {
+    color: #8b9aa3 !important;
+}
