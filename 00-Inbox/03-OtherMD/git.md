@@ -1,7 +1,7 @@
 # 将本地文件夹 `rpGit` 作为 Git 仓库上传到 GitHub，并同时创建远程仓库、添加 `README.md` 文件
 
 
-##### 1. 在 GitHub 上创建远程仓库
+# 1. 在 GitHub 上创建远程仓库
 1. 登录到 [GitHub](https://github.com/)
 2. 在页面右上角点击 **+**，然后选择 **New repository**
 3. 填写仓库名称（比如 `rpGit`）和描述，并选择初始化仓库的选项：
@@ -12,31 +12,39 @@
 
 ----
 
-##### 2. 将本地文件夹初始化为 Git 仓库
+# 2. 将本地文件夹初始化为 Git 仓库
 1. 打开终端或命令行工具，进入到本地文件夹 `rpGit` 目录：`{bash}cd /path/to/rpGit`
 2. 初始化本地 Git 仓库：`{bash}git init`
 3. 添加远程仓库 URL（在 GitHub 上创建仓库时会提供）：
 ```bash
 git remote add origin https://github.com/nanno35578/rpGit.git
 
-git branch -m ahhh # 将本地分支重命名
+git fetch # 拉取最新状态
+git switch main # 切换到默认main分支
 ```
-4. 拉取远程仓库的内容到本地：`{bash}git pull origin main`
+4. 拉取远程仓库的内容到本地：`{bash}git pull origin main`. 其实`{bash}git pull`即可, 在切换到main之后.
 
 > 注意：这里假设远程仓库的默认分支是 `main`，如果是 `master`，则需要使用 `git pull origin master`
 
+- 如果在创建仓库时选中License, pull后就会拉取到本地仓库.
 
-##### 3. 创建 `README.md` 和 `LICENSE` 文件
+# 3. 创建 `README.md` 文件
 1. 创建 `README.md` 文件并编辑：`{bash}echo "# rpGit" > README.md`
 
 ----
 
-##### 4. 提交文件并上传到 GitHub
+# 4. 提交文件并上传到 GitHub
 2. 添加所有文件到 Git 暂存区：`{bash}git add .`
 3. 提交文件：`{bash}git commit -m "Initial commit with README"`
 4. 上传到 GitHub 远程仓库：`{bash}git push -u origin master`
 如果使用的是 GitHub 新的默认 `main` 分支而不是 `master`，则需要使用：`{bash}git push -u origin main` 
 
+#####  5. 验证上传
+打开你 GitHub 上的仓库页面，应该可以看到上传的 `README.md`文件。
+
+-------
+
+# 其他问题
 
 > [!abstract] 若步骤2 出现如下输出:
 > ```bash
@@ -143,9 +151,6 @@ git config --global user.email "3273108824@example.com"
 
 ----
 
-#####  5. 验证上传
-打开你 GitHub 上的仓库页面，应该可以看到上传的 `README.md`文件。
-
 
 ---
 
@@ -160,9 +165,9 @@ git config --global user.email "3273108824@example.com"
 
 
 
- # 删除 Git 分支有两种情况：删除本地分支和删除远程分支。
+# 删除 Git 分支有两种情况：删除本地分支和删除远程分支。
 
- ### 1. 删除本地分支
+### 1. 删除本地分支
 *使用* `git branch -d` *删除本地分支* :  如果该分支已经合并到当前分支（或者你想确保分支已合并），可以使用 `-d`（小写）选项
 - 删除本地分支：`{bash}git branch -d <branch_name>`
 - **`-d`**：会确保分支已经被合并到当前分支，如果分支未合并，会提示你不能删除
