@@ -829,7 +829,7 @@ link 注意事项:
 
 ##### `-fsanitize`
 
- **`-fsanitize=address`**，它是 GCC 和 Clang 编译器提供的一个功能，能够在程序运行时检测内存错误（如越界访问、使用未初始化的内存、内存泄漏等），并提供详细的堆栈跟踪信息 [[Valgrind-And-fsanitize#`-fsanitize`]]
+ **`-fsanitize=address`**，它是 GCC 和 Clang 编译器提供的一个功能，能够在程序运行时检测内存错误（如越界访问、使用未初始化的内存、内存泄漏等），并提供详细的堆栈跟踪信息 [[../../02-Areas/Tools/Valgrind-And-fsanitize#`-fsanitize`]]
 
 * **ld**：链接器
 * **ar**：生成静态库（`.a` 文件）
