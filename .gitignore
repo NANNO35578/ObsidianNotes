@@ -1,8 +1,8 @@
 # --------------------------------------.obsidian
-# 先忽略 .obsidian 下所有内容
+# 先忽略 .obsidian 下的直接内容
 .obsidian/*
 
-# 反向保留你想要同步的配置文件
+# 放行需要同步的配置文件（根目录级）
 !.obsidian/app.json
 !.obsidian/appearance.json
 !.obsidian/hotkeys.json
@@ -10,21 +10,29 @@
 !.obsidian/snippets/
 # !.obsidian/themes/
 
-# 继续忽略不需要的
+# 忽略不需要的目录
 .obsidian/cache
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/backups/
-.obsidian/plugins/
 
+# ---------- 插件同步策略 ----------
+# 放行 plugins 目录（因为上面 .obsidian/* 已忽略它）
+!.obsidian/plugins/
+# 忽略 plugins 下所有子目录中的所有文件. 单层. 多层用**
+.obsidian/plugins/*/*
+# 但放行 data.json（插件配置）
+!.obsidian/plugins/*/data.json
 
+# -------------------------------------- 编辑器 / IDE
 .vscode/
 .opencode/
 
+# -------------------------------------- 文档导出（如果你不希望同步 Word 文档）
 *.doc
 *.docx
 
-# ---------------- 系统生成垃圾文件 ----------------
+# -------------------------------------- 系统生成垃圾文件
 .DS_Store
 .DS_Store?
 ._*
@@ -33,19 +41,16 @@
 ehthumbs.db
 Thumbs.db
 
-# ---------------- Windows 缓存 ----------------
+# -------------------------------------- Windows 缓存
 desktop.ini
 
-# ---------------- VSCode / 编辑器临时文件（如果你在库内编辑） ----------------
-.vscode/
+# -------------------------------------- 编辑器临时文件
 *.swp
 *.swo
 *~
 
-# ---------------- 导出临时文件（pdf/png等导出产物）----------------
+# -------------------------------------- 导出临时文件
 *.tmp
-
-
 
 
 

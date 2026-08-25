@@ -7,13 +7,12 @@
   "showRibbon": true,
   "showViewHeader": true,
   "enabledCssSnippets": [
-    "Colored Sidebar Items",
-    "theme",
     "plugins",
     "everforest_theme",
     "everforest_headling",
     "everforest_folder"
   ],
   "baseFontSize": 15,
-  "accentColor": ""
+  "accentColor": "",
+  "theme": "obsidian"
 }
