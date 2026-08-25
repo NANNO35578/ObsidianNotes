@@ -12,6 +12,7 @@
 !.obsidian/zk-prefixer.json
 !.obsidian/snippets/
 # !.obsidian/themes/
+!.obsidian/fonts/
 
 # 忽略不需要的目录
 .obsidian/cache
