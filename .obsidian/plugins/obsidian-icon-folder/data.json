@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "CoUkuleleSvgrepoCom",
       "CoGnuEmacs",
       "CoEmacs",
       "CoNeovim",
-      "CoMicrosoftWindows",
-      "LiPlaneTakeoff"
+      "CoMicrosoftWindows"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -55,5 +55,6 @@
   "02-Areas": "LiPlaneTakeoff",
   "02-Areas/Windows": "CoMicrosoftWindows",
   "02-Areas/Neovim": "CoNeovim",
-  "02-Areas/Neovim/Emacs.md": "CoEmacs"
+  "02-Areas/Neovim/Emacs.md": "CoEmacs",
+  "01-Projects/MC-ukulele/MC-ukulele-Readme.md": "CoUkuleleSvgrepoCom"
 }

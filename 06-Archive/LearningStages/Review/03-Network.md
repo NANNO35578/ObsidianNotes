@@ -13,7 +13,7 @@ ISO/ Open System Interconnection
 | 物理层 (Physical)     | 传输比特流，定义电气、机械规范              | RJ45、光纤、网线、集线器、Repeater         | 01比特流 |
 
 - 实际应用: [*TCP/IP协议簇*](https://en.wikipedia.org/wiki/Internet_protocol_suite) 应用层-传输层-网络互连层-网络链接层 
-![[TCP_IP协议簇.png]] 
+![['attachments/TCP_IP协议簇.png]] 
 
 
 ----
@@ -141,7 +141,7 @@ IP地址是“互联网协议地址”，是为每台连接到网络的设备分
 
 ##### IPv4 头部
 
-![[05-review/photos/IPv4Header.png]]
+![['attachments/IPv4Header.png]]
 
 首部长度20~60字节
 1. 版本
@@ -181,7 +181,7 @@ IP地址是“互联网协议地址”，是为每台连接到网络的设备分
 - 传输层协议. 提供面向连接的,基于字节流的,可靠交付的,全双工的端到端的传输层协议
 
 ##### TCP 首部
-![[05-review/photos/TCPHeader.png]]
+![['attachments/TCPHeader.png]]
 
 > [!example] TCP如何保证可靠?
 > 1. 面向连接的: 三次握手保证连接, 四次挥手保证断开
@@ -224,7 +224,7 @@ IP地址是“互联网协议地址”，是为每台连接到网络的设备分
 *累计应答*: 一次发送多个包, 进行一次应答; 滑动窗口原理
 *滑动窗口*: TCP传输时, 维护一个滑动窗口, 窗口中的报文无需等待
 
-![cumulativeACKs.png](cumulativeACKs.png) 
+![cumulativeACKs.png]('attachments/cumulativeACKs.png) 
 
 - 窗口大小在握手时交换. 后续在*Window*中更新
 
@@ -235,7 +235,7 @@ IP地址是“互联网协议地址”，是为每台连接到网络的设备分
 
 ##### 拥塞控制
 
-![[cwnds.png]]
+![['attachments/cwnds.png]]
 
 
 ##### 保活机制
@@ -302,7 +302,7 @@ _TCP可以发广播吗？_
 
 [UDP首部格式](https://en.wikipedia.org/wiki/User_Datagram_Protocol#UDP_datagram_structure) 
 大小: 8字节
-![[UDPHeader.png]]
+![['attachments/UDPHeader.png]]
 - 长度: 该字段以八位字节为单位指定 UDP 数据报（标头字段和数据字段）的长度. 以字节为单位
 - 校验和: 校验和字段可用于对报头和数据进行错误校验. 此字段在 IPv4 中是可选的，但在 IPv6 中大多数情况下是必需的
 
@@ -345,7 +345,7 @@ ARP 是 **地址解析协议**，用于将 **IP 地址解析为 MAC 地址**，�
 * 包括：发送方/接收方的 MAC 和 IP 地址
 * 操作类型：请求 *1*  或响应 *2*
 
-![ARP报文格式](./photos/arpHeader.png) 
+![ARP报文格式]('attachments/arpHeader.png) 
 [Wikipedia](https://en.wikipedia.org/wiki/Address_Resolution_Protocol#Packet_structure)
 
 ----
@@ -354,7 +354,7 @@ ARP 是 **地址解析协议**，用于将 **IP 地址解析为 MAC 地址**，�
 
 - 以太网Ⅱ帧结构
 
-![[EthernetⅡFrame.png]]
+![['attachments/EthernetⅡFrame.png]]
 - 长度64~1518, 根据etherType可区分为`0x0800: 包含IPv4数据报; 0x0806: ARP数据报; 0x86DD: IPv6数据报`
 - *MTU*: 即Data段长度: 46~1500, 以太网最大传输数据长度(有效载荷)
 - *MSS*: TCP数据报长度
