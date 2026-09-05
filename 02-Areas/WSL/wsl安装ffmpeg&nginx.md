@@ -8,7 +8,7 @@ sudo apt-get install ffmpeg
 
 安装完成输入`ffmpeg`出现如下输出就安装成功了
 
-![[ffmpegInstall.png]]
+![[../../'attachments/ffmpegInstall.png]]
 
 
 ---
@@ -84,7 +84,7 @@ sudo service nginx start
 
 ### 9. 验证安装
 在Windows主机浏览器中访问 wsl的ip我的是`172.24.105.254`，如果看到Nginx的欢迎页面*如下图*，说明安装成功。
-![[nginxInstall.png]]
+![[../../'attachments/nginxInstall.png]]
 
 
 sudo ln -sf /usr/local/nginx/sbin/nginx /usr/local/bin/nginx

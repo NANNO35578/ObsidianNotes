@@ -29,7 +29,8 @@
 !.obsidian/plugins/*/data.json
 
 # 放行icon目录 便于同步
-!.obsidian/icons/
+!.obsidian/icons/*.zip
+
 
 # -------------------------------------- 编辑器 / IDE
 .vscode/

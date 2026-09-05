@@ -209,7 +209,7 @@ Content-Type: text/html;charset=gb2312
 
 ----
 
-![[HTTPversion.png]]
+![[../../'attachments/HTTPversion.png]]
 
 
 ----

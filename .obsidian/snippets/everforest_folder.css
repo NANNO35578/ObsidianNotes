@@ -11,14 +11,6 @@
  * 3. Enable it in Settings > Appearance > CSS snippets
  */
 
-.nav-folder .collapse-icon svg {
-  display: none;
-}
-.nav-folder .collapse-icon::before  {
-  content: "";
-  font-size: 12px;
-  color: #4F585E;
-}
 /* .nav-folder > .nav-folder-title {
     padding-left: -20px; 
 } */
@@ -27,14 +19,23 @@
    FOLDER COLOR SCHEMES BY PREFIX
    ============================================================================= */
 
-/* .nav-folder:has(.nav-folder-title[data-path^="00"]:not([data-path*="/"])) {
+.nav-folder:has(.nav-folder-title[data-path^="00"]:not([data-path*="/"])) {
   --nav-indentation-guide-color: #a4b9c5;
   --nav-collapse-icon-color: #a4b9c5;
 }
 .nav-folder:has(.nav-folder-title[data-path^="\'attachments"]:not([data-path*="/"]))>.nav-folder-title {
   color: #232A2E !important;
   --nav-collapse-icon-color: #232a2e !important;
-} */
+}
+
+.nav-folder .collapse-icon svg {
+  display: none;
+}
+.nav-folder .collapse-icon::before  {
+  content: "";
+  font-size: 12px;
+  color: #4F585E;
+}
 
 .nav-folder:has(.nav-folder-title[data-path^="00"]:not([data-path*="/"])) {
   --nav-indentation-guide-color: #a4b9c5;

@@ -169,7 +169,7 @@ int main(int argc, char const *argv[]) {
 ```
 对于以上程序, 在`leakFunc`中写溢出, 根据命令`g++ -g -fsanitize=address leak.cpp -o leak`编译后运行输出的内容
 
-![[fsaninite.png]]
+![[../../'attachments/fsaninite.png]]
 
 
 

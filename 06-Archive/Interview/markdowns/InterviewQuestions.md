@@ -3,8 +3,8 @@
 [[0515Meeting]] 
 [[0518Meeting]] 
 [[0522Meeting]] 
-[[0527Meeting]] 
-[[0529Meeting]] 
+[[../../OnlineJudge/markdowns/0527Meeting]] 
+[[../../OnlineJudge/markdowns/0529Meeting]] 
 
 [[0717模拟面试]] 
 [[0718模拟面试]] 

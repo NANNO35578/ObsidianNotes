@@ -26,7 +26,7 @@ Windows打开workbench 主页面`MySQL Connections` 后面有一个⊕ 点击创
 
 不出意外可以看到wsl中MySQL数据
 
-![[mysqlConnection.png]]
+![[../../'attachments/mysqlConnection.png]]
 
 
 若版本不一致会有警告 应该可忽略

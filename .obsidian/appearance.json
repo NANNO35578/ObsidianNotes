@@ -8,9 +8,9 @@
   "showViewHeader": true,
   "enabledCssSnippets": [
     "plugins",
-    "everforest_theme",
     "everforest_headling",
-    "everforest_folder"
+    "everforest_folder",
+    "everforest_theme"
   ],
   "baseFontSize": 15,
   "accentColor": "",

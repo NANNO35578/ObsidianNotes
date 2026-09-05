@@ -14,7 +14,7 @@
 - 如果没有 LOCATION，则使用所选堆栈帧的当前执行地址
 
 
-![[gdbbreak.png]]
+![[../../'attachments/gdbbreak.png]]
 
 ## `continue`
 - `continue [N]` 继续调试的程序，在信号或断点之后
@@ -51,7 +51,7 @@ info 子命令列表：
 - `info threads` -- 显示当前已知的线程。
 - `info watchpoints` -- 指定观察点的状态（如果没有参数，则列出所有观察点）
 
-![[gdbinfo.png]]
+![[../../'attachments/gdbinfo.png]]
 ## `where`
  - **显示堆栈帧**：列出当前所有堆栈帧及其对应的源代码位置
  - `backtrace`

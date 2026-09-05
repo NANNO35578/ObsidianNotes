@@ -18,7 +18,7 @@
 > [!warning] 使用`windeployqt`打包后 需要手动将QT安装目录下`Tools\mingw<version>\bin`中`libssp-0.dll`拷贝到可执行文件所在目录
 
 若最终如图, 则设置成功
-![[makeOPUS.png]]
+![[../../'attachments/makeOPUS.png]]
 
 ##### 3. 开始编译
 

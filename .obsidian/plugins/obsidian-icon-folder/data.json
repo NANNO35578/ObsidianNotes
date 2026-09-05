@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
-      "MaReadme",
-      "LiLinksComingIn",
-      "LiCalendarRange",
-      "MaFolderProject",
-      "LiInbox"
+      "CoGnuEmacs",
+      "CoEmacs",
+      "CoNeovim",
+      "CoMicrosoftWindows",
+      "LiPlaneTakeoff"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -34,8 +34,26 @@
     "debugMode": false,
     "useInternalPlugins": false
   },
+  "LICENSE": "CoLicense",
+  "Readme.md": "CoReadme",
   "06-Archive": "LiArchive",
-  "00-Inbox": "LiInbox",
-  "05-Daily": "LiCalendarRange",
-  "04-Resources": "LiLinksComingIn"
+  "02-Areas/VScode": "CoVscode1",
+  "02-Areas/Tools": "CoToolsLine",
+  "02-Areas/Powershell": "CoFileTypePowershell",
+  "02-Areas/Operating-System": "CoSystemdLight",
+  "02-Areas/Linux": "CoLinux",
+  "02-Areas/Git": "CoFileTypeGit",
+  "02-Areas/Game-Development": "LiGamepad2",
+  "02-Areas/Database": "CoDatabase1",
+  "02-Areas/C-C++": "CoFileTypeCpp",
+  "02-Areas/Android": "CoAndroid1",
+  "00-Inbox": "CoInbox2Line",
+  "01-Projects": "LiPi",
+  "01-Projects/MC-CasualSwing": "CoMinecraftFabric",
+  "01-Projects/MC-ukulele": "CoMinecraft1",
+  "05-Daily": "LiAlbum",
+  "02-Areas": "LiPlaneTakeoff",
+  "02-Areas/Windows": "CoMicrosoftWindows",
+  "02-Areas/Neovim": "CoNeovim",
+  "02-Areas/Neovim/Emacs.md": "CoEmacs"
 }
